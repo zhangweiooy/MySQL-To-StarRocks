@@ -1,0 +1,1 @@
+将MySQL源表以库名.表名的形式列在mysql_tables文件中，之后在脚本中配置连接，会自动生成StarRocks外表建表语句在result目录下，格式为sdi_db.sdi_MySQL库名_MySQL表名
