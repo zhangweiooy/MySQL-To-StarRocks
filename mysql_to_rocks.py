@@ -3,9 +3,9 @@ import os
 import re
 
 mysql_host = "192.168.9.232"
-mysql_port = "3315"
+mysql_port = "3317"
 mysql_user = "hadoop"
-mysql_password = "TaixuVeepoh7"
+mysql_password = "DHzg3XRsw9vwh"
 
 
 def transform_table_struct(path):
@@ -20,7 +20,7 @@ def transform_table_struct(path):
         s = re.sub(charset_pattern, '', s)
 
         # 将 timestamp 数据类型转换为 datetime
-        s = re.sub('TIMESTAMP', 'DATETIME', s, flags=re.I)
+        s = re.sub('\bTIMESTAMP\b', 'DATETIME', s, flags=re.I)
 
         # 将指定长度的字符串、文本、二进制等数据类型转换为 varchar(65533)
         varchar_pattern = (
