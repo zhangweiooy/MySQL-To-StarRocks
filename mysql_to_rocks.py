@@ -62,7 +62,7 @@ def transform_table_struct(path):
         s = re.sub('current_timestamp\(\)', 'CURRENT_TIMESTAMP', s, flags=re.I)
 
         # 将default值增加上引号
-        s = re.sub('(DEFAULT\s+)(\d+)', '\\1\'\\2\'', s, flags=re.I)
+        s = re.sub(r'(DEFAULT\s+)([0-9]+(?:\.[0-9]+)?)', '\\1\'\\2\'', s, flags=re.I)
 
         # 删除结尾的逗号
         end_comma_pattern = re.compile(r',\s*([\n]?\s*\))')
